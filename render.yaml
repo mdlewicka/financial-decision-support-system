@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: financial-decision-support-system
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
+    renderSubdomainPolicy: enabled
+    envVars:
+      - key: FINANCIAL_DECISION_SUPPORT_API_URL
+        value: http://127.0.0.1:8000
