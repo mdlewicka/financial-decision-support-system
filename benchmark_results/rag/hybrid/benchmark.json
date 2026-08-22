@@ -1,0 +1,327 @@
+{
+  "configuration_name": "hybrid",
+  "summary": {
+    "item_count": 13,
+    "mean_recall_at_k": 1.0,
+    "mean_precision_at_k": 0.2692307692307692,
+    "mean_hit_rate": 1.0,
+    "mean_reciprocal_rank": 1.0,
+    "mean_faithfulness": null,
+    "mean_context_recall": null,
+    "duration_seconds": 20.63469370797975
+  },
+  "items": [
+    {
+      "item_id": "inflation_definition_001",
+      "question": "What is inflation?",
+      "answer": "Inflation is a sustained increase in the general price level of goods and services in an economy.",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "interest_rates",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.553180417016847,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "inflation_causes_001",
+      "question": "What can cause inflation?",
+      "answer": "According to the context, inflation may occur when aggregate demand grows faster than productive capacity (demand-pull inflation) or when production costs, such as wages, energy, or imported materials, increase (cost-push inflation).",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "financial_risk",
+        "interest_rates",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "financial_risk_chunk_0000",
+        "interest_rates_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.694667790987296,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "interest_rate_policy_001",
+      "question": "Why may a central bank raise interest rates?",
+      "answer": "A central bank may raise its policy interest rate to reduce demand and inflationary pressure. Central banks often respond to persistent inflation by raising interest rates.",
+      "retrieved_document_ids": [
+        "interest_rates",
+        "inflation_basics",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.5,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.2381657080259174,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "financial_risk_types_001",
+      "question": "What are the main types of financial risk described in the corpus?",
+      "answer": "According to the provided text, the main types of financial risk described are: market risk, credit risk, and liquidity risk.",
+      "retrieved_document_ids": [
+        "financial_risk",
+        "interest_rates",
+        "portfolio_diversification",
+        "inflation_basics"
+      ],
+      "retrieved_chunk_ids": [
+        "financial_risk_chunk_0000",
+        "interest_rates_chunk_0000",
+        "portfolio_diversification_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.8030455419793725,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "diversification_001",
+      "question": "How does portfolio diversification reduce risk?",
+      "answer": "Portfolio diversification means allocating investments across different assets, sectors, regions, or risk factors. Diversification can reduce asset-specific risk because losses in one investment may be offset by gains or stability in another.",
+      "retrieved_document_ids": [
+        "portfolio_diversification",
+        "financial_risk",
+        "interest_rates",
+        "inflation_basics"
+      ],
+      "retrieved_chunk_ids": [
+        "portfolio_diversification_chunk_0000",
+        "financial_risk_chunk_0000",
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 2.2074872920056805,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_inflation_basics_3d916c9c6c62",
+      "question": "What is the definition of inflation according to the source document?",
+      "answer": "Inflation is a sustained increase in the general price level of goods and services in an economy.",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "interest_rates",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.589742042007856,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_inflation_basics_e030c84854e3",
+      "question": "What causes demand-pull inflation?",
+      "answer": "Demand-pull inflation may occur when aggregate demand grows faster than productive capacity.",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "interest_rates",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.4915995000046678,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_inflation_basics_784e7a638ad4",
+      "question": "How do central banks typically respond to persistent inflation?",
+      "answer": "Central banks often respond to persistent inflation by raising interest rates.",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "interest_rates",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.418698499997845,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_inflation_basics_c03bf707766c",
+      "question": "What are the two main types of inflation mentioned in the source?",
+      "answer": "According to the context, the two main types of inflation mentioned are demand-pull inflation and cost-push inflation.",
+      "retrieved_document_ids": [
+        "inflation_basics",
+        "interest_rates",
+        "financial_risk",
+        "portfolio_diversification"
+      ],
+      "retrieved_chunk_ids": [
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000",
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.7223899999808054,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_financial_risk_8de318245192",
+      "question": "What does credit risk refer to in the context of financial transactions?",
+      "answer": "Credit risk is the risk that a borrower will fail to meet contractual obligations.",
+      "retrieved_document_ids": [
+        "financial_risk",
+        "portfolio_diversification",
+        "interest_rates",
+        "inflation_basics"
+      ],
+      "retrieved_chunk_ids": [
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000",
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.5100858339865226,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_financial_risk_40e5966010d6",
+      "question": "How is liquidity risk defined in the source document?",
+      "answer": "Liquidity risk occurs when an asset cannot be sold quickly without a significant loss in value.",
+      "retrieved_document_ids": [
+        "financial_risk",
+        "portfolio_diversification",
+        "inflation_basics",
+        "interest_rates"
+      ],
+      "retrieved_chunk_ids": [
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000",
+        "inflation_basics_chunk_0000",
+        "interest_rates_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.583822834014427,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_financial_risk_9b4ef5eaddb1",
+      "question": "What are the key factors that contribute to market risk?",
+      "answer": "Market risk results from changes in prices, exchange rates, interest rates, or market volatility.",
+      "retrieved_document_ids": [
+        "financial_risk",
+        "portfolio_diversification",
+        "interest_rates",
+        "inflation_basics"
+      ],
+      "retrieved_chunk_ids": [
+        "financial_risk_chunk_0000",
+        "portfolio_diversification_chunk_0000",
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.5922034170071129,
+      "faithfulness": null,
+      "context_recall": null
+    },
+    {
+      "item_id": "generated_portfolio_diversification_4c0c49574019",
+      "question": "What type of risk cannot be eliminated through portfolio diversification?",
+      "answer": "Systematic market risk.",
+      "retrieved_document_ids": [
+        "portfolio_diversification",
+        "financial_risk",
+        "interest_rates",
+        "inflation_basics"
+      ],
+      "retrieved_chunk_ids": [
+        "portfolio_diversification_chunk_0000",
+        "financial_risk_chunk_0000",
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.25,
+      "hit_rate": 1.0,
+      "reciprocal_rank": 1.0,
+      "duration_seconds": 1.228958917025011,
+      "faithfulness": null,
+      "context_recall": null
+    }
+  ]
+}

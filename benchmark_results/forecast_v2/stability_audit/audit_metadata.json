@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "audit_name": "forecast_v1_stability_audit",
+  "development_splits_used": [
+    "training",
+    "validation"
+  ],
+  "test_split_read": false,
+  "target_definition": "next_session_simple_return",
+  "models": [
+    "zero_return",
+    "historical_mean",
+    "last_observed_return",
+    "random_forest_v1"
+  ],
+  "fold_count": 5,
+  "bootstrap_iterations": 1000,
+  "random_state": 42,
+  "training_fingerprint": "28c23265767c17c50223d3004fb88c3ccfcf4bf8e175fb17535b96aecbe8a14c",
+  "validation_fingerprint": "7eeebc30dac01a8e48c817aa88b6811e1445fda3c0fbb0535eb12fe5c1261f50",
+  "folds": [
+    {
+      "fold": 1,
+      "training_rows": 23680,
+      "evaluation_rows": 963,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-01-24",
+      "training_target_date_max": "2022-01-25",
+      "evaluation_date_min": "2022-01-25",
+      "evaluation_date_max": "2022-07-08",
+      "evaluation_target_date_max": "2022-07-11"
+    },
+    {
+      "fold": 2,
+      "training_rows": 24636,
+      "evaluation_rows": 970,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-07-08",
+      "training_target_date_max": "2022-07-09",
+      "evaluation_date_min": "2022-07-09",
+      "evaluation_date_max": "2022-12-20",
+      "evaluation_target_date_max": "2022-12-21"
+    },
+    {
+      "fold": 3,
+      "training_rows": 25613,
+      "evaluation_rows": 949,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-12-20",
+      "training_target_date_max": "2022-12-21",
+      "evaluation_date_min": "2022-12-21",
+      "evaluation_date_max": "2023-06-03",
+      "evaluation_target_date_max": "2023-06-05"
+    },
+    {
+      "fold": 4,
+      "training_rows": 26555,
+      "evaluation_rows": 970,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2023-06-03",
+      "training_target_date_max": "2023-06-04",
+      "evaluation_date_min": "2023-06-04",
+      "evaluation_date_max": "2023-11-15",
+      "evaluation_target_date_max": "2023-11-16"
+    },
+    {
+      "fold": 5,
+      "training_rows": 27532,
+      "evaluation_rows": 934,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2023-11-15",
+      "training_target_date_max": "2023-11-16",
+      "evaluation_date_min": "2023-11-16",
+      "evaluation_date_max": "2024-04-27",
+      "evaluation_target_date_max": "2024-04-28"
+    }
+  ]
+}

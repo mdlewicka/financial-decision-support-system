@@ -1,0 +1,2 @@
+strategy,strategy_type,construction,evaluation_split,observations,annualized_mean_return,annualized_volatility,sharpe_ratio,sortino_ratio,value_at_risk,conditional_value_at_risk,maximum_drawdown,cumulative_return,final_portfolio_value,total_reward,total_transaction_cost,mean_turnover
+ppo,reinforcement_learning,dynamic_ppo_allocation,test,565,0.2893120981066315,0.22250696189275215,1.2112371246001128,2.649425493899813,0.013777519406044656,0.020692552661842407,0.11625190057547796,0.8166988279644982,1.8166988279644982,-2.5694039690822317,0.005061446583523695,0.00895831253721008

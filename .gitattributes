@@ -1,0 +1,3 @@
+# Generated CSV benchmark artifacts may use CRLF line endings.
+# Treat CR at end of line as part of the line ending.
+*.csv whitespace=cr-at-eol

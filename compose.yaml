@@ -1,0 +1,77 @@
+{
+  "name": "financial-decision-support-system",
+  "services": {
+    "backend": {
+      "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile",
+        "target": "backend"
+      },
+      "image": "financial-decision-support-backend:local",
+      "environment": {
+        "OLLAMA_HOST": "${OLLAMA_HOST:-http://host.docker.internal:11434}"
+      },
+      "extra_hosts": [
+        "host.docker.internal:host-gateway"
+      ],
+      "ports": [
+        "127.0.0.1:8000:8000"
+      ],
+      "volumes": [
+        "market-cache:/app/data/cache",
+        "model-cache:/home/app/.cache"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/system/readiness', timeout=2)"
+        ],
+        "interval": "10s",
+        "timeout": "3s",
+        "retries": 5,
+        "start_period": "20s"
+      },
+      "init": true,
+      "restart": "no"
+    },
+    "frontend": {
+      "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile",
+        "target": "frontend"
+      },
+      "image": "financial-decision-support-frontend:local",
+      "environment": {
+        "FINANCIAL_DECISION_SUPPORT_API_URL": "http://backend:8000"
+      },
+      "ports": [
+        "127.0.0.1:8501:8501"
+      ],
+      "depends_on": {
+        "backend": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=2)"
+        ],
+        "interval": "10s",
+        "timeout": "3s",
+        "retries": 5,
+        "start_period": "20s"
+      },
+      "init": true,
+      "restart": "no"
+    }
+  },
+  "volumes": {
+    "market-cache": {},
+    "model-cache": {}
+  }
+}

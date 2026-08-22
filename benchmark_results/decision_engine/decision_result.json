@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "engine": {
+    "deterministic": true,
+    "llm_used_for_ranking": false,
+    "portfolio_weights_modified": false
+  },
+  "provenance": {
+    "source_schema_version": 1,
+    "evaluation_split": "validation",
+    "return_definition": "adjusted_close_simple_return_on_shared_market_dates",
+    "observations": 565,
+    "periods_per_year": 252,
+    "date_min": "2022-01-26",
+    "date_max": "2024-04-25",
+    "tickers": [
+      "AGG",
+      "BTC-USD",
+      "EPOL",
+      "GLD",
+      "QQQ",
+      "SPY",
+      "VGK",
+      "VT"
+    ]
+  },
+  "scenario_contexts": [
+    {
+      "name": "defensive",
+      "construction": "manual_defensive",
+      "weights": {
+        "AGG": 0.35,
+        "BTC-USD": 0.03,
+        "EPOL": 0.05,
+        "GLD": 0.2,
+        "QQQ": 0.07,
+        "SPY": 0.1,
+        "VGK": 0.08,
+        "VT": 0.12
+      }
+    },
+    {
+      "name": "equal_weight",
+      "construction": "manual_equal_weight",
+      "weights": {
+        "AGG": 0.125,
+        "BTC-USD": 0.125,
+        "EPOL": 0.125,
+        "GLD": 0.125,
+        "QQQ": 0.125,
+        "SPY": 0.125,
+        "VGK": 0.125,
+        "VT": 0.125
+      }
+    },
+    {
+      "name": "growth",
+      "construction": "manual_growth",
+      "weights": {
+        "AGG": 0.1,
+        "BTC-USD": 0.1,
+        "EPOL": 0.1,
+        "GLD": 0.05,
+        "QQQ": 0.2,
+        "SPY": 0.2,
+        "VGK": 0.1,
+        "VT": 0.15
+      }
+    },
+    {
+      "name": "maximum_sharpe",
+      "construction": "optimized_on_training_maximum_sharpe",
+      "weights": {
+        "AGG": 0.329835789951151,
+        "BTC-USD": 0.16076422552961384,
+        "EPOL": 3.1923847950804367e-16,
+        "GLD": 0.15939998451923504,
+        "QQQ": 0.34999999999999953,
+        "SPY": 4.414164387455444e-17,
+        "VGK": 7.159290696955557e-17,
+        "VT": 1.6765561942673088e-16
+      }
+    },
+    {
+      "name": "minimum_volatility",
+      "construction": "optimized_on_training_minimum_volatility",
+      "weights": {
+        "AGG": 0.35,
+        "BTC-USD": 0.0,
+        "EPOL": 1.1949833844107627e-16,
+        "GLD": 0.34999999999999964,
+        "QQQ": 1.3014297673053408e-17,
+        "SPY": 0.2945126384618363,
+        "VGK": 0.005487361538163725,
+        "VT": 2.6601465877122677e-16
+      }
+    }
+  ],
+  "evaluations": [
+    {
+      "profile": {
+        "profile_type": "balanced",
+        "priorities": {
+          "return": 0.3,
+          "volatility": 0.25,
+          "drawdown": 0.25,
+          "diversification": 0.2
+        },
+        "constraints": {
+          "maximum_annualized_volatility": 0.2,
+          "maximum_drawdown": 0.32,
+          "maximum_concentration_index": 0.4,
+          "minimum_effective_assets": 2.5,
+          "minimum_diversification_ratio": 1.0,
+          "minimum_cash_reserve": 0.05
+        },
+        "liquidity_need": "medium",
+        "investment_horizon_years": 5
+      },
+      "available_liquidity_fraction": 0.1,
+      "normalization": [
+        {
+          "metric": "return",
+          "minimum": 0.05328921061471808,
+          "maximum": 0.1232250199169872,
+          "higher_is_better": true
+        },
+        {
+          "metric": "volatility",
+          "minimum": 0.09513877519646992,
+          "maximum": 0.1882264339605429,
+          "higher_is_better": false
+        },
+        {
+          "metric": "drawdown",
+          "minimum": 0.15305020213086384,
+          "maximum": 0.293717212946741,
+          "higher_is_better": false
+        },
+        {
+          "metric": "diversification",
+          "minimum": 2.0479192923379754,
+          "maximum": 3.2849774364599074,
+          "higher_is_better": true
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "equal_weight",
+          "admissible": true,
+          "rank": 1,
+          "total_score": 0.5234452096787625,
+          "normalized_components": {
+            "return": 1.0,
+            "volatility": 0.09378083871505027,
+            "drawdown": 0.0,
+            "diversification": 1.0
+          },
+          "weighted_contributions": {
+            "return": 0.3,
+            "volatility": 0.02344520967876257,
+            "drawdown": 0.0,
+            "diversification": 0.2
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:diversification",
+            "weakest_component:drawdown"
+          ]
+        },
+        {
+          "name": "minimum_volatility",
+          "admissible": true,
+          "rank": 2,
+          "total_score": 0.5,
+          "normalized_components": {
+            "return": 0.0,
+            "volatility": 1.0,
+            "drawdown": 1.0,
+            "diversification": 0.0
+          },
+          "weighted_contributions": {
+            "return": 0.0,
+            "volatility": 0.25,
+            "drawdown": 0.25,
+            "diversification": 0.0
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:drawdown",
+            "weakest_component:return"
+          ]
+        },
+        {
+          "name": "defensive",
+          "admissible": true,
+          "rank": 3,
+          "total_score": 0.4867929167768271,
+          "normalized_components": {
+            "return": 0.08265907593901257,
+            "volatility": 0.798256271138206,
+            "drawdown": 0.6551390732092838,
+            "diversification": 0.49323178954125463
+          },
+          "weighted_contributions": {
+            "return": 0.024797722781703772,
+            "volatility": 0.1995640677845515,
+            "drawdown": 0.16378476830232094,
+            "diversification": 0.09864635790825094
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:volatility",
+            "weakest_component:return"
+          ]
+        },
+        {
+          "name": "growth",
+          "admissible": true,
+          "rank": 4,
+          "total_score": 0.43551874815872804,
+          "normalized_components": {
+            "return": 0.9432488328026207,
+            "volatility": 0.0,
+            "drawdown": 0.02084934203740174,
+            "diversification": 0.736658814042957
+          },
+          "weighted_contributions": {
+            "return": 0.2829746498407862,
+            "volatility": 0.0,
+            "drawdown": 0.005212335509350435,
+            "diversification": 0.1473317628085914
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:return",
+            "weakest_component:volatility"
+          ]
+        },
+        {
+          "name": "maximum_sharpe",
+          "admissible": true,
+          "rank": 5,
+          "total_score": 0.3859406414206752,
+          "normalized_components": {
+            "return": 0.8942496458226948,
+            "volatility": 0.2575349889291335,
+            "drawdown": 0.10742832745083841,
+            "diversification": 0.13212459289436873
+          },
+          "weighted_contributions": {
+            "return": 0.26827489374680846,
+            "volatility": 0.06438374723228338,
+            "drawdown": 0.026857081862709603,
+            "diversification": 0.026424918578873746
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:return",
+            "weakest_component:drawdown"
+          ]
+        }
+      ],
+      "recommended_scenario": "equal_weight"
+    },
+    {
+      "profile": {
+        "profile_type": "conservative",
+        "priorities": {
+          "return": 0.15,
+          "volatility": 0.3,
+          "drawdown": 0.35,
+          "diversification": 0.2
+        },
+        "constraints": {
+          "maximum_annualized_volatility": 0.14,
+          "maximum_drawdown": 0.22,
+          "maximum_concentration_index": 0.35,
+          "minimum_effective_assets": 3.0,
+          "minimum_diversification_ratio": 1.0,
+          "minimum_cash_reserve": 0.1
+        },
+        "liquidity_need": "high",
+        "investment_horizon_years": 3
+      },
+      "available_liquidity_fraction": 0.1,
+      "normalization": [
+        {
+          "metric": "return",
+          "minimum": 0.05328921061471808,
+          "maximum": 0.059070039986690644,
+          "higher_is_better": true
+        },
+        {
+          "metric": "volatility",
+          "minimum": 0.09513877519646992,
+          "maximum": 0.11391862658654826,
+          "higher_is_better": false
+        },
+        {
+          "metric": "drawdown",
+          "minimum": 0.15305020213086384,
+          "maximum": 0.20156075784970695,
+          "higher_is_better": false
+        },
+        {
+          "metric": "diversification",
+          "minimum": 2.0479192923379754,
+          "maximum": 2.658075694529819,
+          "higher_is_better": true
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "minimum_volatility",
+          "admissible": true,
+          "rank": 1,
+          "total_score": 0.6499999999999999,
+          "normalized_components": {
+            "return": 0.0,
+            "volatility": 1.0,
+            "drawdown": 1.0,
+            "diversification": 0.0
+          },
+          "weighted_contributions": {
+            "return": 0.0,
+            "volatility": 0.3,
+            "drawdown": 0.35,
+            "diversification": 0.0
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:drawdown",
+            "weakest_component:return"
+          ]
+        },
+        {
+          "name": "defensive",
+          "admissible": true,
+          "rank": 2,
+          "total_score": 0.35,
+          "normalized_components": {
+            "return": 1.0,
+            "volatility": 0.0,
+            "drawdown": 0.0,
+            "diversification": 1.0
+          },
+          "weighted_contributions": {
+            "return": 0.15,
+            "volatility": 0.0,
+            "drawdown": 0.0,
+            "diversification": 0.2
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:diversification",
+            "weakest_component:volatility"
+          ]
+        },
+        {
+          "name": "equal_weight",
+          "admissible": false,
+          "rank": null,
+          "total_score": null,
+          "normalized_components": {},
+          "weighted_contributions": {},
+          "constraint_violations": [
+            "maximum_annualized_volatility",
+            "maximum_drawdown"
+          ],
+          "tradeoffs": []
+        },
+        {
+          "name": "growth",
+          "admissible": false,
+          "rank": null,
+          "total_score": null,
+          "normalized_components": {},
+          "weighted_contributions": {},
+          "constraint_violations": [
+            "maximum_annualized_volatility",
+            "maximum_drawdown"
+          ],
+          "tradeoffs": []
+        },
+        {
+          "name": "maximum_sharpe",
+          "admissible": false,
+          "rank": null,
+          "total_score": null,
+          "normalized_components": {},
+          "weighted_contributions": {},
+          "constraint_violations": [
+            "maximum_annualized_volatility",
+            "maximum_drawdown"
+          ],
+          "tradeoffs": []
+        }
+      ],
+      "recommended_scenario": "minimum_volatility"
+    },
+    {
+      "profile": {
+        "profile_type": "growth",
+        "priorities": {
+          "return": 0.5,
+          "volatility": 0.15,
+          "drawdown": 0.15,
+          "diversification": 0.2
+        },
+        "constraints": {
+          "maximum_annualized_volatility": 0.3,
+          "maximum_drawdown": 0.45,
+          "maximum_concentration_index": 0.5,
+          "minimum_effective_assets": 2.0,
+          "minimum_diversification_ratio": 1.0,
+          "minimum_cash_reserve": 0.0
+        },
+        "liquidity_need": "low",
+        "investment_horizon_years": 10
+      },
+      "available_liquidity_fraction": 0.1,
+      "normalization": [
+        {
+          "metric": "return",
+          "minimum": 0.05328921061471808,
+          "maximum": 0.1232250199169872,
+          "higher_is_better": true
+        },
+        {
+          "metric": "volatility",
+          "minimum": 0.09513877519646992,
+          "maximum": 0.1882264339605429,
+          "higher_is_better": false
+        },
+        {
+          "metric": "drawdown",
+          "minimum": 0.15305020213086384,
+          "maximum": 0.293717212946741,
+          "higher_is_better": false
+        },
+        {
+          "metric": "diversification",
+          "minimum": 2.0479192923379754,
+          "maximum": 3.2849774364599074,
+          "higher_is_better": true
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "equal_weight",
+          "admissible": true,
+          "rank": 1,
+          "total_score": 0.7140671258072575,
+          "normalized_components": {
+            "return": 1.0,
+            "volatility": 0.09378083871505027,
+            "drawdown": 0.0,
+            "diversification": 1.0
+          },
+          "weighted_contributions": {
+            "return": 0.5,
+            "volatility": 0.01406712580725754,
+            "drawdown": 0.0,
+            "diversification": 0.2
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:diversification",
+            "weakest_component:drawdown"
+          ]
+        },
+        {
+          "name": "growth",
+          "admissible": true,
+          "rank": 2,
+          "total_score": 0.622083580515512,
+          "normalized_components": {
+            "return": 0.9432488328026207,
+            "volatility": 0.0,
+            "drawdown": 0.02084934203740174,
+            "diversification": 0.736658814042957
+          },
+          "weighted_contributions": {
+            "return": 0.47162441640131036,
+            "volatility": 0.0,
+            "drawdown": 0.003127401305610261,
+            "diversification": 0.1473317628085914
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:return",
+            "weakest_component:volatility"
+          ]
+        },
+        {
+          "name": "maximum_sharpe",
+          "admissible": true,
+          "rank": 3,
+          "total_score": 0.5282942389472169,
+          "normalized_components": {
+            "return": 0.8942496458226948,
+            "volatility": 0.2575349889291335,
+            "drawdown": 0.10742832745083841,
+            "diversification": 0.13212459289436873
+          },
+          "weighted_contributions": {
+            "return": 0.4471248229113474,
+            "volatility": 0.038630248339370024,
+            "drawdown": 0.01611424911762576,
+            "diversification": 0.026424918578873746
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:return",
+            "weakest_component:drawdown"
+          ]
+        },
+        {
+          "name": "defensive",
+          "admissible": true,
+          "rank": 4,
+          "total_score": 0.35798519752988067,
+          "normalized_components": {
+            "return": 0.08265907593901257,
+            "volatility": 0.798256271138206,
+            "drawdown": 0.6551390732092838,
+            "diversification": 0.49323178954125463
+          },
+          "weighted_contributions": {
+            "return": 0.04132953796950629,
+            "volatility": 0.11973844067073089,
+            "drawdown": 0.09827086098139257,
+            "diversification": 0.09864635790825094
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:volatility",
+            "weakest_component:return"
+          ]
+        },
+        {
+          "name": "minimum_volatility",
+          "admissible": true,
+          "rank": 5,
+          "total_score": 0.3,
+          "normalized_components": {
+            "return": 0.0,
+            "volatility": 1.0,
+            "drawdown": 1.0,
+            "diversification": 0.0
+          },
+          "weighted_contributions": {
+            "return": 0.0,
+            "volatility": 0.15,
+            "drawdown": 0.15,
+            "diversification": 0.0
+          },
+          "constraint_violations": [],
+          "tradeoffs": [
+            "strongest_component:drawdown",
+            "weakest_component:return"
+          ]
+        }
+      ],
+      "recommended_scenario": "equal_weight"
+    }
+  ]
+}

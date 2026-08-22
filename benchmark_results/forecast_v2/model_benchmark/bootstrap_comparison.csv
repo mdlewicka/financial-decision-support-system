@@ -1,0 +1,11 @@
+task,horizon,model,comparison_model,mean_primary_difference,ci_lower_95,ci_upper_95,probability_better_than_baseline,cluster_dates
+regression,1,zero_return,zero_return,0.0,0.0,0.0,0.0,823
+regression,1,historical_mean,zero_return,7.613760314269445e-05,-1.2671936193073666e-05,0.00015869750364909022,0.041,823
+regression,1,random_forest_v1,zero_return,4.796508264636328e-05,-6.242835694791771e-05,0.00016717294629481496,0.221,823
+regression,1,ridge_v2,zero_return,0.00010798203120539842,-8.8499437205603e-06,0.00022334309978318774,0.034,823
+regression,5,zero_return,zero_return,0.0,0.0,0.0,0.0,819
+regression,5,historical_mean,zero_return,0.0003640744214428223,-3.364214165653442e-05,0.0008104659596369315,0.041,819
+regression,5,ridge_v2,zero_return,0.000241258348149701,-0.00014400528935239244,0.0006186866736649777,0.115,819
+classification,5,always_abstain,historical_prior,0.0,0.0,0.0,0.0,819
+classification,5,historical_prior,historical_prior,0.0,0.0,0.0,0.0,819
+classification,5,logistic_v2,historical_prior,0.060745397836249326,0.04875841472424375,0.07377237902664266,1.0,819

@@ -1,0 +1,20 @@
+{
+  "challenger": "hist_gradient_boosting_v2",
+  "comparison_model": "logistic_v2",
+  "fold_wins": 4,
+  "folds": 5,
+  "ticker_wins": 7,
+  "tickers": 8,
+  "balanced_accuracy_bootstrap_probability_better": 0.9985,
+  "gates": {
+    "median_balanced_accuracy_improves": true,
+    "wins_at_least_three_of_five_folds": true,
+    "bootstrap_support_at_80_percent": true,
+    "mean_brier_not_worse": true,
+    "wins_at_least_half_of_tickers": true
+  },
+  "predictive_gate_passed": true,
+  "decision": "promote_to_economic_validation",
+  "test_split_read": false,
+  "final_test_claim": false
+}

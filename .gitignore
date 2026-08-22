@@ -1,0 +1,139 @@
+# Virtual environments
+
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.python-version
+
+# Build and packaging
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# macOS
+
+.DS_Store
+__MACOSX/
+
+# Windows
+
+Thumbs.db
+Desktop.ini
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+# Test, lint and type-check caches
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE
+
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project data
+#
+# Market datasets are local/generated artifacts and are intentionally excluded
+# from version control.
+#
+# The controlled RAG evaluation corpus is retained because it is part of the
+# reproducible project benchmark.
+
+data/*
+!data/rag/
+
+data/rag/*
+!data/rag/evaluation/
+
+data/rag/evaluation/*
+!data/rag/evaluation/golden_dataset_expanded.json
+!data/rag/evaluation/reference_corpus.json
+
+# Logs and temporary files
+
+logs/
+*.log
+tmp/
+temp/
+
+# Local databases
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ML models and generic artifacts
+#
+# Project-specific frozen benchmark artifacts under benchmark_results/ are
+# intentionally versioned for reproducibility and final-evaluation provenance.
+
+models/
+artifacts/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.bin
+*.safetensors
+
+# Experiment outputs outside the controlled benchmark directory
+
+outputs/
+results/
+reports/generated/
+mlruns/
+
+# Vector indexes and caches
+
+*.faiss
+*.index
+cache/
+.cache/
+
+# Ollama or local model configuration
+
+.ollama/
+
+# Generated evaluation outputs outside the controlled benchmark directory
+
+evaluation_results/
+
+# benchmark_results/
+#
+# Intentionally NOT ignored.
+#
+# This directory contains reproducibility artifacts, validation benchmarks,
+# frozen model/configuration evidence and the one-time final-test record.
+# In particular, benchmark_results/final_test/ and
+# benchmark_results/final_evaluation_frozen_manifest.json must be preserved.
+data/cache/

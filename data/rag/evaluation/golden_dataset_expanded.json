@@ -1,0 +1,221 @@
+{
+  "items": [
+    {
+      "item_id": "inflation_definition_001",
+      "question": "What is inflation?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "price level",
+        "goods",
+        "services"
+      ],
+      "reference_answer": "Inflation is a sustained increase in the general price level of goods and services in an economy."
+    },
+    {
+      "item_id": "inflation_causes_001",
+      "question": "What can cause inflation?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "aggregate demand",
+        "production costs",
+        "demand-pull",
+        "cost-push"
+      ],
+      "reference_answer": "Inflation may be caused by aggregate demand growing faster than productive capacity or by increases in production costs such as wages, energy, and imported materials."
+    },
+    {
+      "item_id": "interest_rate_policy_001",
+      "question": "Why may a central bank raise interest rates?",
+      "expected_document_ids": [
+        "interest_rates",
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "interest_rates_chunk_0000",
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "reduce demand",
+        "inflationary pressure",
+        "inflation"
+      ],
+      "reference_answer": "A central bank may raise interest rates to reduce aggregate demand and persistent inflationary pressure."
+    },
+    {
+      "item_id": "financial_risk_types_001",
+      "question": "What are the main types of financial risk described in the corpus?",
+      "expected_document_ids": [
+        "financial_risk"
+      ],
+      "expected_chunk_ids": [
+        "financial_risk_chunk_0000"
+      ],
+      "expected_keywords": [
+        "market risk",
+        "credit risk",
+        "liquidity risk"
+      ],
+      "reference_answer": "The corpus describes market risk, credit risk, and liquidity risk."
+    },
+    {
+      "item_id": "diversification_001",
+      "question": "How does portfolio diversification reduce risk?",
+      "expected_document_ids": [
+        "portfolio_diversification"
+      ],
+      "expected_chunk_ids": [
+        "portfolio_diversification_chunk_0000"
+      ],
+      "expected_keywords": [
+        "different assets",
+        "asset-specific risk",
+        "systematic market risk"
+      ],
+      "reference_answer": "Diversification reduces asset-specific risk by spreading investments across different assets, sectors, regions, or risk factors, although it cannot eliminate systematic market risk."
+    },
+    {
+      "item_id": "generated_inflation_basics_3d916c9c6c62",
+      "question": "What is the definition of inflation according to the source document?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "inflation",
+        "sustained",
+        "price level",
+        "goods",
+        "services"
+      ],
+      "reference_answer": "a sustained increase in the general price level of goods and services in an economy"
+    },
+    {
+      "item_id": "generated_inflation_basics_e030c84854e3",
+      "question": "What causes demand-pull inflation?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "demand-pull",
+        "inflation",
+        "aggregate demand",
+        "productive capacity"
+      ],
+      "reference_answer": "when aggregate demand grows faster than productive capacity"
+    },
+    {
+      "item_id": "generated_inflation_basics_784e7a638ad4",
+      "question": "How do central banks typically respond to persistent inflation?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "central banks",
+        "persistent inflation",
+        "interest rates"
+      ],
+      "reference_answer": "by raising interest rates"
+    },
+    {
+      "item_id": "generated_inflation_basics_c03bf707766c",
+      "question": "What are the two main types of inflation mentioned in the source?",
+      "expected_document_ids": [
+        "inflation_basics"
+      ],
+      "expected_chunk_ids": [
+        "inflation_basics_chunk_0000"
+      ],
+      "expected_keywords": [
+        "inflation",
+        "demand-pull",
+        "cost-push"
+      ],
+      "reference_answer": "demand-pull inflation and cost-push inflation"
+    },
+    {
+      "item_id": "generated_financial_risk_8de318245192",
+      "question": "What does credit risk refer to in the context of financial transactions?",
+      "expected_document_ids": [
+        "financial_risk"
+      ],
+      "expected_chunk_ids": [
+        "financial_risk_chunk_0000"
+      ],
+      "expected_keywords": [
+        "credit risk",
+        "borrower",
+        "contractual obligations"
+      ],
+      "reference_answer": "Credit risk is the risk that a borrower will fail to meet contractual obligations."
+    },
+    {
+      "item_id": "generated_financial_risk_40e5966010d6",
+      "question": "How is liquidity risk defined in the source document?",
+      "expected_document_ids": [
+        "financial_risk"
+      ],
+      "expected_chunk_ids": [
+        "financial_risk_chunk_0000"
+      ],
+      "expected_keywords": [
+        "liquidity risk",
+        "asset",
+        "sold quickly",
+        "significant loss in value"
+      ],
+      "reference_answer": "Liquidity risk occurs when an asset cannot be sold quickly without a significant loss in value."
+    },
+    {
+      "item_id": "generated_financial_risk_9b4ef5eaddb1",
+      "question": "What are the key factors that contribute to market risk?",
+      "expected_document_ids": [
+        "financial_risk"
+      ],
+      "expected_chunk_ids": [
+        "financial_risk_chunk_0000"
+      ],
+      "expected_keywords": [
+        "market risk",
+        "prices",
+        "exchange rates",
+        "interest rates",
+        "market volatility"
+      ],
+      "reference_answer": "Changes in prices, exchange rates, interest rates, or market volatility."
+    },
+    {
+      "item_id": "generated_portfolio_diversification_4c0c49574019",
+      "question": "What type of risk cannot be eliminated through portfolio diversification?",
+      "expected_document_ids": [
+        "portfolio_diversification"
+      ],
+      "expected_chunk_ids": [
+        "portfolio_diversification_chunk_0000"
+      ],
+      "expected_keywords": [
+        "portfolio diversification",
+        "systematic market risk",
+        "eliminate"
+      ],
+      "reference_answer": "systematic market risk"
+    }
+  ]
+}

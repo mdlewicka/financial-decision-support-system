@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "selection_dataset": "training",
+  "criterion": "aic",
+  "selected_orders": {
+    "AGG": [
+      2,
+      0,
+      0
+    ],
+    "BTC-USD": [
+      0,
+      0,
+      0
+    ],
+    "EPOL": [
+      2,
+      0,
+      0
+    ],
+    "GLD": [
+      0,
+      0,
+      0
+    ],
+    "QQQ": [
+      2,
+      0,
+      0
+    ],
+    "SPY": [
+      2,
+      0,
+      0
+    ],
+    "VGK": [
+      2,
+      0,
+      0
+    ],
+    "VT": [
+      2,
+      0,
+      0
+    ]
+  },
+  "candidate_scores": [
+    {
+      "ticker": "AGG",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -27588.9542414784,
+      "bic": -27576.9308680202,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "AGG",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -27587.8141579909,
+      "bic": -27569.7790978035,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "AGG",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -27609.7029908627,
+      "bic": -27585.6562439462,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "AGG",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -27587.9604619333,
+      "bic": -27569.925401746,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "AGG",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -27606.1002635838,
+      "bic": -27582.0535166673,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "AGG",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -27585.5767535986,
+      "bic": -27561.530006682,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -9754.2216908233,
+      "bic": -9742.4442717749,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -9753.5524379759,
+      "bic": -9735.8863094033,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -9751.5528477001,
+      "bic": -9727.9980096034,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -9753.5492784527,
+      "bic": -9735.8831498802,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -9751.5518775848,
+      "bic": -9727.9970394881,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "BTC-USD",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -9751.5524660718,
+      "bic": -9727.9976279751,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "EPOL",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -15386.5452455526,
+      "bic": -15374.5886236128,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "EPOL",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -15395.4963700985,
+      "bic": -15377.5614371889,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "EPOL",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -15396.5368995514,
+      "bic": -15372.6236556719,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "EPOL",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -15394.8056484767,
+      "bic": -15376.8707155671,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "EPOL",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -15396.188008733,
+      "bic": -15372.2747648536,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "EPOL",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -15396.1509457404,
+      "bic": -15372.2377018609,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -19288.3704045878,
+      "bic": -19276.3470311295,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -19286.5610951039,
+      "bic": -19268.5260349165,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -19284.6021592484,
+      "bic": -19260.5554123319,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -19286.5608228482,
+      "bic": -19268.5257626608,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -19284.6002800982,
+      "bic": -19260.5535331817,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "GLD",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -19284.580023854,
+      "bic": -19260.5332769375,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "QQQ",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -17950.7663375339,
+      "bic": -17938.7429640757,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "QQQ",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -17990.3477237119,
+      "bic": -17972.3126635245,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "QQQ",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -17993.9139955847,
+      "bic": -17969.8672486682,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "QQQ",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -17986.7733608401,
+      "bic": -17968.7383006527,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "QQQ",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -17992.6796133465,
+      "bic": -17968.63286643,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "QQQ",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -17992.6598393773,
+      "bic": -17968.6130924607,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "SPY",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -18823.1226705503,
+      "bic": -18811.0992970921,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "SPY",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -18874.3886114058,
+      "bic": -18856.3535512184,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "SPY",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -18888.2011330778,
+      "bic": -18864.1543861612,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "SPY",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -18867.0386469524,
+      "bic": -18849.003586765,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "SPY",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -18887.3913940116,
+      "bic": -18863.3446470951,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "SPY",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -18880.2200663588,
+      "bic": -18856.1733194423,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VGK",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -17416.1575272989,
+      "bic": -17404.1341538407,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VGK",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -17461.1163559907,
+      "bic": -17443.0812958033,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "VGK",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -17479.7483754745,
+      "bic": -17455.701628558,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "VGK",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -17454.1455810839,
+      "bic": -17436.1105208965,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VGK",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -17476.3312876829,
+      "bic": -17452.2845407664,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VGK",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -17469.2039076138,
+      "bic": -17445.1571606973,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VT",
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "aic": -18562.6710581964,
+      "bic": -18550.6476847381,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "VT",
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "aic": -18614.196406036,
+      "bic": -18596.1613458486,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VT",
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": -18632.685458369,
+      "bic": -18608.6387114525,
+      "converged": true,
+      "selected": true,
+      "error": ""
+    },
+    {
+      "ticker": "VT",
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "aic": -18605.9753796593,
+      "bic": -18587.9403194719,
+      "converged": false,
+      "selected": false,
+      "error": "Model did not converge."
+    },
+    {
+      "ticker": "VT",
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "aic": -18631.0684218893,
+      "bic": -18607.0216749728,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    },
+    {
+      "ticker": "VT",
+      "p": 1,
+      "d": 0,
+      "q": 1,
+      "aic": -18622.6300382956,
+      "bic": -18598.5832913791,
+      "converged": true,
+      "selected": false,
+      "error": ""
+    }
+  ]
+}

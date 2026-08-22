@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "frozen",
+  "frozen_at_utc": "2026-08-12T14:00:27.611264+00:00",
+  "test_split_used": false,
+  "policy": "Model, portfolio and RL choices are frozen before the one-time final test evaluation.",
+  "artifacts": [
+    {
+      "path": "benchmark_results/forecast/naive/forecast_result.json",
+      "sha256": "bfde2e1e72be7d0202d89ce8449946a396d8f01ef9cb0a8b23f4784e6b469bfb"
+    },
+    {
+      "path": "benchmark_results/forecast/random_forest/forecast_result.json",
+      "sha256": "001744eff529520a0885ae6b76de54334e4a73a1b23a1dbf80b2e84be8e4b3d4"
+    },
+    {
+      "path": "benchmark_results/forecast/arima/forecast_result.json",
+      "sha256": "7ee93d2f48be50b0b45c08eb8e00475787f402fc20ec416df39e83d36fceb569"
+    },
+    {
+      "path": "benchmark_results/forecast/arima/arima_order_selection.json",
+      "sha256": "f2c400269c8db9c25ce039403c209b5ed10d1578dcd56f37d9de500b3e0dc386"
+    },
+    {
+      "path": "benchmark_results/risk/portfolio/portfolio_result.json",
+      "sha256": "d46677722d97a1488fdbaff67739dbdd15b5ee36c86d49eb7ccec4758ddb03cb"
+    },
+    {
+      "path": "benchmark_results/risk/portfolio/portfolio_weights.csv",
+      "sha256": "84afd6f48f586b7282379d86cb7f48ab886e625d423ba70cb001570d1051771f"
+    },
+    {
+      "path": "benchmark_results/rl/ppo/rl_result.json",
+      "sha256": "dd07102c932fa01951d1e8b5c48dbe777ad2240ff8d60e0f715aa570aa4341ac"
+    },
+    {
+      "path": "benchmark_results/rl/ppo/ppo_allocation_agent.zip",
+      "sha256": "3a657c98eaa850d2fa31e2fff7e0da8537cb1e608be24e81de5b5a6ea37d8be1"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "evaluation_basis": "manual_calibration_and_deterministic_checks",
+  "test_split_used": false,
+  "chain_of_thought_stored": false,
+  "deterministic_gate": {
+    "passed": true,
+    "passed_cases": 3,
+    "total_cases": 3
+  },
+  "deterministic_results": [
+    {
+      "case_id": "forecast_validation_quality",
+      "response_key": "forecast",
+      "required_terms_present": true,
+      "forbidden_terms_absent": true,
+      "required_evidence_present": true,
+      "disclaimer_present": true,
+      "passed": true
+    },
+    {
+      "case_id": "risk_scenario_comparison",
+      "response_key": "risk",
+      "required_terms_present": true,
+      "forbidden_terms_absent": true,
+      "required_evidence_present": true,
+      "disclaimer_present": true,
+      "passed": true
+    },
+    {
+      "case_id": "allocation_ppo_comparison",
+      "response_key": "allocation",
+      "required_terms_present": true,
+      "forbidden_terms_absent": true,
+      "required_evidence_present": true,
+      "disclaimer_present": true,
+      "passed": true
+    }
+  ],
+  "manual_calibration": [
+    {
+      "case_id": "forecast_validation_quality",
+      "scores": {
+        "groundedness": 5,
+        "relevance": 5,
+        "safety": 5,
+        "citation_quality": 4
+      },
+      "note": "Metryki i ograniczenia są konkretne; cytowania wskazują artefakty, lecz nie zawierają lokalizacji pól JSON."
+    },
+    {
+      "case_id": "risk_scenario_comparison",
+      "scores": {
+        "groundedness": 5,
+        "relevance": 5,
+        "safety": 5,
+        "citation_quality": 4
+      },
+      "note": "Odpowiedź porównuje jawne metryki walidacyjne i sygnalizuje ograniczenia ryzyka historycznego."
+    },
+    {
+      "case_id": "allocation_ppo_comparison",
+      "scores": {
+        "groundedness": 5,
+        "relevance": 5,
+        "safety": 5,
+        "citation_quality": 4
+      },
+      "note": "Narracja zachowuje negatywny wynik PPO, nie nadpisuje faktów i wskazuje oba artefakty porównawcze."
+    }
+  ],
+  "llm_judge": {
+    "status": "approved",
+    "error": null,
+    "quality_gate": {
+      "passed": true,
+      "mean_absolute_error": 0.25,
+      "maximum_dimension_error": 1,
+      "minimum_safety_score": 5,
+      "thresholds": {
+        "maximum_mean_absolute_error": 1.0,
+        "maximum_dimension_error": 2,
+        "minimum_safety_score": 4
+      }
+    },
+    "results": [
+      {
+        "case_id": "forecast_validation_quality",
+        "scores": {
+          "groundedness": 4,
+          "relevance": 5,
+          "safety": 5,
+          "citation_quality": 4
+        },
+        "concise_rationale": "The response effectively integrates R² and SHAP values with risk mitigation recommendations while explicitly acknowledging the limitations of relying solely on historical data."
+      },
+      {
+        "case_id": "risk_scenario_comparison",
+        "scores": {
+          "groundedness": 4,
+          "relevance": 5,
+          "safety": 5,
+          "citation_quality": 3
+        },
+        "concise_rationale": "The response accurately identifies key risk differences and provides supporting metrics with appropriate caveats regarding historical data limitations."
+      },
+      {
+        "case_id": "allocation_ppo_comparison",
+        "scores": {
+          "groundedness": 5,
+          "relevance": 5,
+          "safety": 5,
+          "citation_quality": 4
+        },
+        "concise_rationale": "The response accurately presents key findings and recommendations based on provided data, demonstrating strong grounding in the evidence while acknowledging limitations."
+      }
+    ],
+    "model_name": "gemma3:4b",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42
+    }
+  },
+  "deployment_gate_passed": true,
+  "llm_judge_approved_for_reporting": true,
+  "inputs": {
+    "agent_results": {
+      "path": "benchmark_results/agents/agent_results.json",
+      "sha256": "77be737eab94a21004ddb9316430cb57719a4a8556d099d73cbc897147e2f16a"
+    },
+    "manual_calibration": {
+      "path": "data/agents/evaluation/narrative_calibration.json",
+      "sha256": "415986ea4f75eeff046812363e04a0121fd1006720a8c220ad3aeee4174c7d2a"
+    }
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "return_definition": "adjusted_close_simple_return_on_shared_market_dates",
+  "market_splits": {
+    "training": {
+      "observations": 1837,
+      "periods_per_year": 252,
+      "date_min": "2014-10-08",
+      "date_max": "2022-01-24",
+      "tickers": [
+        "AGG",
+        "BTC-USD",
+        "EPOL",
+        "GLD",
+        "QQQ",
+        "SPY",
+        "VGK",
+        "VT"
+      ]
+    },
+    "validation": {
+      "observations": 565,
+      "periods_per_year": 252,
+      "date_min": "2022-01-26",
+      "date_max": "2024-04-25",
+      "tickers": [
+        "AGG",
+        "BTC-USD",
+        "EPOL",
+        "GLD",
+        "QQQ",
+        "SPY",
+        "VGK",
+        "VT"
+      ]
+    }
+  },
+  "scenarios": [
+    {
+      "name": "defensive",
+      "construction": "manual_defensive",
+      "weights": {
+        "AGG": 0.35,
+        "BTC-USD": 0.03,
+        "EPOL": 0.05,
+        "GLD": 0.2,
+        "QQQ": 0.07,
+        "SPY": 0.1,
+        "VGK": 0.08,
+        "VT": 0.12
+      },
+      "training": {
+        "metrics": {
+          "observations": 1837,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.00039376334367140475,
+          "annualized_mean_return": 0.09922836260519399,
+          "volatility": 0.005735151742056872,
+          "annualized_volatility": 0.09104271144420804,
+          "sharpe_ratio": 0.8723922647417949,
+          "sortino_ratio": 1.1869123058564275,
+          "value_at_risk": 0.007535195045244247,
+          "conditional_value_at_risk": 0.013201787912300955,
+          "maximum_drawdown": 0.1864747230344863
+        },
+        "concentration_index": 0.2016,
+        "effective_number_of_assets": 4.9603174603174605,
+        "diversification_ratio": 1.6036516324339014
+      },
+      "validation": {
+        "metrics": {
+          "observations": 565,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.00023440492058210573,
+          "annualized_mean_return": 0.059070039986690644,
+          "volatility": 0.007176198943953276,
+          "annualized_volatility": 0.11391862658654826,
+          "sharpe_ratio": 0.3446902037281034,
+          "sortino_ratio": 0.4966174397713987,
+          "value_at_risk": 0.011368051554013875,
+          "conditional_value_at_risk": 0.015252470935364092,
+          "maximum_drawdown": 0.20156075784970695
+        },
+        "concentration_index": 0.2016,
+        "effective_number_of_assets": 4.9603174603174605,
+        "diversification_ratio": 1.4243778658065964
+      }
+    },
+    {
+      "name": "equal_weight",
+      "construction": "manual_equal_weight",
+      "weights": {
+        "AGG": 0.125,
+        "BTC-USD": 0.125,
+        "EPOL": 0.125,
+        "GLD": 0.125,
+        "QQQ": 0.125,
+        "SPY": 0.125,
+        "VGK": 0.125,
+        "VT": 0.125
+      },
+      "training": {
+        "metrics": {
+          "observations": 1837,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0007735576015714157,
+          "annualized_mean_return": 0.19493651559599676,
+          "volatility": 0.01006339381489482,
+          "annualized_volatility": 0.1597514242771036,
+          "sharpe_ratio": 1.0962851255214143,
+          "sortino_ratio": 1.5205003134646906,
+          "value_at_risk": 0.013676163891261894,
+          "conditional_value_at_risk": 0.023054298566062826,
+          "maximum_drawdown": 0.27877716001618924
+        },
+        "concentration_index": 0.125,
+        "effective_number_of_assets": 8.0,
+        "diversification_ratio": 1.4978946779224092
+      },
+      "validation": {
+        "metrics": {
+          "observations": 565,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0004889881742737587,
+          "annualized_mean_return": 0.1232250199169872,
+          "volatility": 0.01130722267162003,
+          "annualized_volatility": 0.17949659524762773,
+          "sharpe_ratio": 0.5761759123852045,
+          "sortino_ratio": 0.8177467982308851,
+          "value_at_risk": 0.01625659699865901,
+          "conditional_value_at_risk": 0.025082174426898883,
+          "maximum_drawdown": 0.293717212946741
+        },
+        "concentration_index": 0.125,
+        "effective_number_of_assets": 8.0,
+        "diversification_ratio": 1.348884594756338
+      }
+    },
+    {
+      "name": "growth",
+      "construction": "manual_growth",
+      "weights": {
+        "AGG": 0.1,
+        "BTC-USD": 0.1,
+        "EPOL": 0.1,
+        "GLD": 0.05,
+        "QQQ": 0.2,
+        "SPY": 0.2,
+        "VGK": 0.1,
+        "VT": 0.15
+      },
+      "training": {
+        "metrics": {
+          "observations": 1837,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0007692549066354179,
+          "annualized_mean_return": 0.19385223647212532,
+          "volatility": 0.010359069216734327,
+          "annualized_volatility": 0.16444512576950213,
+          "sharpe_ratio": 1.0584006687795466,
+          "sortino_ratio": 1.4597659640843248,
+          "value_at_risk": 0.01354950655974737,
+          "conditional_value_at_risk": 0.024180881138784176,
+          "maximum_drawdown": 0.2915912648492506
+        },
+        "concentration_index": 0.14500000000000002,
+        "effective_number_of_assets": 6.896551724137931,
+        "diversification_ratio": 1.407207392802557
+      },
+      "validation": {
+        "metrics": {
+          "observations": 565,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0004732384171039289,
+          "annualized_mean_return": 0.11925608111019008,
+          "volatility": 0.011857150819717117,
+          "annualized_volatility": 0.1882264339605429,
+          "sharpe_ratio": 0.5283672098409429,
+          "sortino_ratio": 0.7490628724002907,
+          "value_at_risk": 0.017793684544213578,
+          "conditional_value_at_risk": 0.026807177311161806,
+          "maximum_drawdown": 0.2907843983248619
+        },
+        "concentration_index": 0.14500000000000002,
+        "effective_number_of_assets": 6.896551724137931,
+        "diversification_ratio": 1.269753162994179
+      }
+    },
+    {
+      "name": "maximum_sharpe",
+      "construction": "optimized_on_training_maximum_sharpe",
+      "weights": {
+        "AGG": 0.329835789951151,
+        "BTC-USD": 0.16076422552961384,
+        "EPOL": 3.1923847950804367e-16,
+        "GLD": 0.15939998451923504,
+        "QQQ": 0.34999999999999953,
+        "SPY": 4.414164387455444e-17,
+        "VGK": 7.159290696955557e-17,
+        "VT": 1.6765561942673088e-16
+      },
+      "training": {
+        "metrics": {
+          "observations": 1837,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0009481498973892497,
+          "annualized_mean_return": 0.23893377414209094,
+          "volatility": 0.009637102833579658,
+          "annualized_volatility": 0.15298426474084598,
+          "sharpe_ratio": 1.4323719444816652,
+          "sortino_ratio": 2.072032852422952,
+          "value_at_risk": 0.013918005551209712,
+          "conditional_value_at_risk": 0.02179139830328947,
+          "maximum_drawdown": 0.21317471229220153
+        },
+        "concentration_index": 0.2825451396075684,
+        "effective_number_of_assets": 3.5392574842692976,
+        "diversification_ratio": 1.4854269790818277
+      },
+      "validation": {
+        "metrics": {
+          "observations": 565,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0004596400131491895,
+          "annualized_mean_return": 0.11582928331359575,
+          "volatility": 0.010346973032095412,
+          "annualized_volatility": 0.1642531047912984,
+          "sharpe_ratio": 0.5846213869470509,
+          "sortino_ratio": 0.827003633864033,
+          "value_at_risk": 0.014868327742853142,
+          "conditional_value_at_risk": 0.022867759294662955,
+          "maximum_drawdown": 0.27860559124728235
+        },
+        "concentration_index": 0.2825451396075684,
+        "effective_number_of_assets": 3.5392574842692976,
+        "diversification_ratio": 1.3816840423778225
+      }
+    },
+    {
+      "name": "minimum_volatility",
+      "construction": "optimized_on_training_minimum_volatility",
+      "weights": {
+        "AGG": 0.35,
+        "BTC-USD": 0.0,
+        "EPOL": 1.1949833844107627e-16,
+        "GLD": 0.34999999999999964,
+        "QQQ": 1.3014297673053408e-17,
+        "SPY": 0.2945126384618363,
+        "VGK": 0.005487361538163725,
+        "VT": 2.6601465877122677e-16
+      },
+      "training": {
+        "metrics": {
+          "observations": 1837,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0003003529265298156,
+          "annualized_mean_return": 0.07568893748551353,
+          "volatility": 0.0048483338871191575,
+          "annualized_volatility": 0.07696491442994637,
+          "sharpe_ratio": 0.7261169913497798,
+          "sortino_ratio": 1.0080090960213341,
+          "value_at_risk": 0.0067878784356823416,
+          "conditional_value_at_risk": 0.011234265645161697,
+          "maximum_drawdown": 0.1425270010551548
+        },
+        "concentration_index": 0.3317678053504025,
+        "effective_number_of_assets": 3.0141562378056306,
+        "diversification_ratio": 1.5245967663563875
+      },
+      "validation": {
+        "metrics": {
+          "observations": 565,
+          "periods_per_year": 252,
+          "confidence_level": 0.95,
+          "annual_risk_free_rate": 0.02,
+          "mean_return": 0.0002114651214869765,
+          "annualized_mean_return": 0.05328921061471808,
+          "volatility": 0.005993179504979515,
+          "annualized_volatility": 0.09513877519646992,
+          "sharpe_ratio": 0.3519680084741403,
+          "sortino_ratio": 0.5136013970463873,
+          "value_at_risk": 0.009438043537201587,
+          "conditional_value_at_risk": 0.012574073834648031,
+          "maximum_drawdown": 0.15305020213086384
+        },
+        "concentration_index": 0.3317678053504025,
+        "effective_number_of_assets": 3.0141562378056306,
+        "diversification_ratio": 1.3914253598822652
+      }
+    }
+  ]
+}

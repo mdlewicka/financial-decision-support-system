@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "forecast_v2_gradient_boosting_challenger",
+  "development_splits_used": [
+    "training",
+    "validation"
+  ],
+  "test_split_read": false,
+  "known_v1_test_used_for_selection": false,
+  "selection_protocol": "4 frozen candidates are ranked on the latest chronological 20% of each outer training fold. The outer fold is not used for hyperparameter selection.",
+  "config": {
+    "inner_validation_fraction": 0.2,
+    "max_iter": 150,
+    "min_samples_leaf": 40,
+    "l2_regularization": 2.0,
+    "minimum_confidence": 0.45,
+    "transaction_cost": 0.001,
+    "bootstrap_iterations": 2000,
+    "random_state": 42,
+    "candidate_grid": [
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 7
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 15
+      },
+      {
+        "learning_rate": 0.06,
+        "max_leaf_nodes": 7
+      },
+      {
+        "learning_rate": 0.06,
+        "max_leaf_nodes": 15
+      }
+    ]
+  },
+  "source_benchmark": "forecast_v2_model_benchmark",
+  "source_training_fingerprint": "28c23265767c17c50223d3004fb88c3ccfcf4bf8e175fb17535b96aecbe8a14c",
+  "source_validation_fingerprint": "7eeebc30dac01a8e48c817aa88b6811e1445fda3c0fbb0535eb12fe5c1261f50",
+  "final_test_claim": false
+}

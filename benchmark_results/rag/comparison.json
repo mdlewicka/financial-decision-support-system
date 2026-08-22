@@ -1,0 +1,44 @@
+{
+  "best_configuration": "vector",
+  "ranking": [
+    {
+      "rank": 1,
+      "configuration_name": "vector",
+      "quality_score": 0.8173076923076923,
+      "item_count": 13,
+      "mean_recall_at_k": 1.0,
+      "mean_precision_at_k": 0.2692307692307692,
+      "mean_hit_rate": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "mean_faithfulness": null,
+      "mean_context_recall": null,
+      "duration_seconds": 25.509833624993917
+    },
+    {
+      "rank": 2,
+      "configuration_name": "hybrid",
+      "quality_score": 0.8173076923076923,
+      "item_count": 13,
+      "mean_recall_at_k": 1.0,
+      "mean_precision_at_k": 0.2692307692307692,
+      "mean_hit_rate": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "mean_faithfulness": null,
+      "mean_context_recall": null,
+      "duration_seconds": 20.63469370797975
+    },
+    {
+      "rank": 3,
+      "configuration_name": "reranked",
+      "quality_score": 0.8173076923076923,
+      "item_count": 13,
+      "mean_recall_at_k": 1.0,
+      "mean_precision_at_k": 0.2692307692307692,
+      "mean_hit_rate": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "mean_faithfulness": null,
+      "mean_context_recall": null,
+      "duration_seconds": 22.230288334016223
+    }
+  ]
+}

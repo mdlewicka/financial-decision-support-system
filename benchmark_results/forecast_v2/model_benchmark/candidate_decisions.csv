@@ -1,0 +1,4 @@
+task,horizon,model,primary_metric_improves,majority_fold_wins,bootstrap_probability_better,bootstrap_support_at_80_percent,positive_screening_utility,decision,decision_is_final_test_claim
+classification,5,logistic_v2,True,True,1.0,True,False,do_not_promote_in_current_form,False
+regression,1,ridge_v2,False,False,0.034,False,False,do_not_promote_in_current_form,False
+regression,5,ridge_v2,True,True,0.115,False,False,do_not_promote_in_current_form,False

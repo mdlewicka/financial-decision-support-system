@@ -1,0 +1,40 @@
+{
+  "documents": [
+    {
+      "document_id": "inflation_basics",
+      "source": "reference_corpus/inflation_basics",
+      "content": "Inflation is a sustained increase in the general price level of goods and services in an economy. Demand-pull inflation may occur when aggregate demand grows faster than productive capacity. Cost-push inflation may arise when production costs, such as wages, energy, or imported materials, increase. Central banks often respond to persistent inflation by raising interest rates.",
+      "metadata": {
+        "title": "Inflation Basics",
+        "domain": "macroeconomics"
+      }
+    },
+    {
+      "document_id": "interest_rates",
+      "source": "reference_corpus/interest_rates",
+      "content": "Interest rates represent the cost of borrowing money and the return received by lenders. A central bank may raise its policy interest rate to reduce demand and inflationary pressure. Higher interest rates usually make loans more expensive, may discourage investment and consumption, and can support the domestic currency.",
+      "metadata": {
+        "title": "Interest Rates",
+        "domain": "macroeconomics"
+      }
+    },
+    {
+      "document_id": "financial_risk",
+      "source": "reference_corpus/financial_risk",
+      "content": "Financial risk is the possibility of suffering a financial loss. Market risk results from changes in prices, exchange rates, interest rates, or market volatility. Credit risk is the risk that a borrower will fail to meet contractual obligations. Liquidity risk occurs when an asset cannot be sold quickly without a significant loss in value.",
+      "metadata": {
+        "title": "Financial Risk",
+        "domain": "finance"
+      }
+    },
+    {
+      "document_id": "portfolio_diversification",
+      "source": "reference_corpus/portfolio_diversification",
+      "content": "Portfolio diversification means allocating investments across different assets, sectors, regions, or risk factors. Diversification can reduce asset-specific risk because losses in one investment may be offset by gains or stability in another. It cannot eliminate all risk, particularly systematic market risk.",
+      "metadata": {
+        "title": "Portfolio Diversification",
+        "domain": "portfolio_management"
+      }
+    }
+  ]
+}

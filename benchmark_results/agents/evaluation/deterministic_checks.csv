@@ -1,0 +1,4 @@
+case_id,response_key,required_terms_present,forbidden_terms_absent,required_evidence_present,disclaimer_present,passed
+forecast_validation_quality,forecast,True,True,True,True,True
+risk_scenario_comparison,risk,True,True,True,True,True
+allocation_ppo_comparison,allocation,True,True,True,True,True

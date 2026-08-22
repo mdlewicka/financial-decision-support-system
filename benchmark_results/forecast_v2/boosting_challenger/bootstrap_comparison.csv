@@ -1,0 +1,3 @@
+metric,challenger_minus_logistic,ci_lower_95,ci_upper_95,probability_challenger_better,cluster_dates
+balanced_accuracy,0.018876364883982255,0.005449201747115243,0.0337041887788172,0.9985,819
+multiclass_brier,-0.02582828942101134,-0.032904412867661416,-0.019240110952598047,1.0,819

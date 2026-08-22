@@ -1,0 +1,16 @@
+profile_type,scenario,construction,admissible,rank,total_score,constraint_violations,tradeoffs
+balanced,equal_weight,manual_equal_weight,True,1,0.5234452096787625,,strongest_component:diversification|weakest_component:drawdown
+balanced,minimum_volatility,optimized_on_training_minimum_volatility,True,2,0.5,,strongest_component:drawdown|weakest_component:return
+balanced,defensive,manual_defensive,True,3,0.4867929167768271,,strongest_component:volatility|weakest_component:return
+balanced,growth,manual_growth,True,4,0.43551874815872804,,strongest_component:return|weakest_component:volatility
+balanced,maximum_sharpe,optimized_on_training_maximum_sharpe,True,5,0.3859406414206752,,strongest_component:return|weakest_component:drawdown
+conservative,minimum_volatility,optimized_on_training_minimum_volatility,True,1,0.6499999999999999,,strongest_component:drawdown|weakest_component:return
+conservative,defensive,manual_defensive,True,2,0.35,,strongest_component:diversification|weakest_component:volatility
+conservative,equal_weight,manual_equal_weight,False,,,maximum_annualized_volatility|maximum_drawdown,
+conservative,growth,manual_growth,False,,,maximum_annualized_volatility|maximum_drawdown,
+conservative,maximum_sharpe,optimized_on_training_maximum_sharpe,False,,,maximum_annualized_volatility|maximum_drawdown,
+growth,equal_weight,manual_equal_weight,True,1,0.7140671258072575,,strongest_component:diversification|weakest_component:drawdown
+growth,growth,manual_growth,True,2,0.622083580515512,,strongest_component:return|weakest_component:volatility
+growth,maximum_sharpe,optimized_on_training_maximum_sharpe,True,3,0.5282942389472169,,strongest_component:return|weakest_component:drawdown
+growth,defensive,manual_defensive,True,4,0.35798519752988067,,strongest_component:volatility|weakest_component:return
+growth,minimum_volatility,optimized_on_training_minimum_volatility,True,5,0.3,,strongest_component:drawdown|weakest_component:return

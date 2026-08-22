@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "model_name": "gemma3:4b",
+  "retrieval_strategy": "vector",
+  "evaluation_basis": "validation_benchmark_artifacts",
+  "test_split_used": false,
+  "responses": {
+    "forecast": {
+      "agent_name": "forecast_analysis_agent",
+      "question": "Jak wiarygodny jest model Random Forest i które cechy mają największy wpływ na jego prognozy?",
+      "summary": "Model Random Forest ma na walidacji słabą zdolność prognostyczną: R²=0.0048, a trafność kierunku wynosi 50.48%.",
+      "findings": [
+        "Ocena obejmuje 4786 obserwacji; MAE=0.011043, RMSE=0.016901.",
+        "Najważniejsze globalne cechy według średniej bezwzględnej wartości SHAP to: adjusted_close_to_ma_20, momentum_20, adjusted_close_to_ma_5, open_to_close_return.",
+        "Wartości SHAP opisują sposób działania modelu, lecz nie dowodzą zależności przyczynowej."
+      ],
+      "risks": [
+        "Trafność kierunku bliska 50% oznacza, że prognoza nie powinna być samodzielną podstawą alokacji.",
+        "Zmiana reżimu rynkowego może pogorszyć wyniki względem zaobserwowanej walidacji."
+      ],
+      "recommendations": [
+        "Traktuj prognozę jako sygnał pomocniczy i łącz ją z limitami ryzyka oraz analizą portfela.",
+        "Monitoruj błędy i trafność kierunku osobno dla każdego tickera przed wykorzystaniem operacyjnym."
+      ],
+      "limitations": [
+        "Metryki pochodzą ze zbioru walidacyjnego, a nie z przyszłości.",
+        "Interpretacje SHAP opisują model Random Forest i nie są dowodem ekonomicznej przyczynowości.",
+        "Wynik ma charakter wsparcia decyzyjnego opartego na danych historycznych; nie jest indywidualną poradą finansową ani gwarancją przyszłych rezultatów."
+      ],
+      "evidence": [
+        {
+          "source_type": "benchmark_artifact",
+          "identifier": "forecast_result.json",
+          "description": "Random Forest validation forecast metrics"
+        },
+        {
+          "source_type": "benchmark_artifact",
+          "identifier": "xai_result.json",
+          "description": "Random Forest SHAP and feature effects"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "financial_risk",
+          "description": "reference_corpus/financial_risk"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "portfolio_diversification",
+          "description": "reference_corpus/portfolio_diversification"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "interest_rates",
+          "description": "reference_corpus/interest_rates"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "inflation_basics",
+          "description": "reference_corpus/inflation_basics"
+        }
+      ]
+    },
+    "risk": {
+      "agent_name": "risk_analysis_agent",
+      "question": "Jakie są najważniejsze różnice ryzyka pomiędzy ocenionymi wariantami portfela?",
+      "summary": "Porównano 5 scenariuszy na walidacji. Najniższą zmienność ma minimum_volatility, a najwyższy Sharpe ma maximum_sharpe.",
+      "findings": [
+        "minimum_volatility osiąga roczną zmienność 9.51%.",
+        "minimum_volatility ma najniższy maksymalny drawdown: 15.31%.",
+        "maximum_sharpe osiąga najwyższy współczynnik Sharpe: 0.5846."
+      ],
+      "risks": [
+        "Wyższy oczekiwany zwrot wiąże się w ocenionych wariantach z większą zmiennością lub obsunięciem kapitału.",
+        "VaR i CVaR opisują historyczny ogon rozkładu i mogą niedoszacować nowych zdarzeń skrajnych."
+      ],
+      "recommendations": [
+        "Wybieraj scenariusz według jawnego celu: ograniczenia zmienności, obsunięcia albo maksymalizacji Sharpe’a.",
+        "Kontroluj koncentrację i dywersyfikację razem z VaR, CVaR i maksymalnym drawdownem."
+      ],
+      "limitations": [
+        "Porównanie opisuje historyczny okres walidacyjny.",
+        "Metryki ryzyka nie obejmują wszystkich przyszłych scenariuszy.",
+        "Wynik ma charakter wsparcia decyzyjnego opartego na danych historycznych; nie jest indywidualną poradą finansową ani gwarancją przyszłych rezultatów."
+      ],
+      "evidence": [
+        {
+          "source_type": "benchmark_artifact",
+          "identifier": "portfolio_result.json",
+          "description": "Training-constructed portfolio scenarios evaluated on validation data"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "portfolio_diversification",
+          "description": "reference_corpus/portfolio_diversification"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "financial_risk",
+          "description": "reference_corpus/financial_risk"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "interest_rates",
+          "description": "reference_corpus/interest_rates"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "inflation_basics",
+          "description": "reference_corpus/inflation_basics"
+        }
+      ]
+    },
+    "allocation": {
+      "agent_name": "allocation_recommendation_agent",
+      "question": "Który oceniony wariant najlepiej równoważy zwrot i ryzyko oraz jak PPO wypada na tle metod klasycznych?",
+      "summary": "Dla profilu balanced wariantem referencyjnym jest maximum_sharpe. PPO nie osiągnęło ani najwyższego zwrotu, ani najwyższego współczynnika Sharpe na walidacji.",
+      "findings": [
+        "Najwyższy roczny zwrot osiąga equal_weight: 12.08%.",
+        "Najwyższy Sharpe osiąga maximum_sharpe: 0.5657.",
+        "Najniższą zmienność ma minimum_volatility: 9.51%; najniższy drawdown ma minimum_volatility: 15.31%."
+      ],
+      "risks": [
+        "Ranking zależy od celu: zwrot, Sharpe, zmienność i drawdown wskazują różne warianty.",
+        "Dynamiczna polityka PPO uwzględnia koszty transakcyjne, ale jej wynik walidacyjny nie dowodzi przewagi nad strategiami klasycznymi."
+      ],
+      "recommendations": [
+        "Dla profilu balanced traktuj maximum_sharpe jako wariant referencyjny do dalszej analizy, nie jako automatyczną decyzję inwestycyjną.",
+        "Przed końcowym wyborem porównaj tolerowany drawdown, zmienność, koncentrację oraz koszty zmian alokacji."
+      ],
+      "limitations": [
+        "Porównanie opiera się na wynikach walidacyjnych.",
+        "Końcowy zbiór testowy nie został wykorzystany i pozostaje zamknięty.",
+        "Wynik ma charakter wsparcia decyzyjnego opartego na danych historycznych; nie jest indywidualną poradą finansową ani gwarancją przyszłych rezultatów."
+      ],
+      "evidence": [
+        {
+          "source_type": "benchmark_artifact",
+          "identifier": "portfolio_result.json",
+          "description": "Classical and manual portfolio validation results"
+        },
+        {
+          "source_type": "benchmark_artifact",
+          "identifier": "rl_result.json",
+          "description": "PPO and classical strategy validation comparison"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "portfolio_diversification",
+          "description": "reference_corpus/portfolio_diversification"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "financial_risk",
+          "description": "reference_corpus/financial_risk"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "interest_rates",
+          "description": "reference_corpus/interest_rates"
+        },
+        {
+          "source_type": "rag_document",
+          "identifier": "inflation_basics",
+          "description": "reference_corpus/inflation_basics"
+        }
+      ]
+    }
+  }
+}

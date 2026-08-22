@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "validation_name": "forecast_v2_economic_validation",
+  "development_splits_used": [
+    "training",
+    "validation"
+  ],
+  "test_split_read": false,
+  "known_v1_test_used_for_selection": false,
+  "source_benchmark": "forecast_v2_model_benchmark",
+  "source_observations_fingerprint": "b47a77d76c2a2f96f20125f25aca5931ef6f9eb316081fda1ed5b7b013353a50",
+  "config": {
+    "confidence_thresholds": [
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "default_threshold": 0.45,
+    "transaction_cost": 0.001,
+    "periods_per_year": 50.4,
+    "bootstrap_iterations": 2000,
+    "random_state": 42
+  },
+  "policy": {
+    "name": "logistic_5d_long_cash",
+    "positions": [
+      "cash",
+      "long"
+    ],
+    "short_selling": false,
+    "decision_rule": "Long only when P(up) is the largest class probability and is at least the fixed confidence threshold; otherwise cash.",
+    "periods_overlap": false,
+    "entry_exit_turnover_costed": true
+  },
+  "limitation": "This is an out-of-fold development screening analysis, not the one-time V2 final test and not a claim of live profitability."
+}

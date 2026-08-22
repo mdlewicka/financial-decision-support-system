@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "validation_name": "forecast_v2_boosting_economic_validation",
+  "source_model": "hist_gradient_boosting_v2",
+  "development_splits_used": [
+    "training",
+    "validation"
+  ],
+  "test_split_read": false,
+  "known_v1_test_used_for_selection": false,
+  "source_observations_fingerprint": "19bdcb1a07539889cd5524fb57d67bfd02be38f5e833eb2d6a6b1c7b3fe71168",
+  "source_challenger_decision": "promote_to_economic_validation",
+  "config": {
+    "confidence_thresholds": [
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "default_threshold": 0.45,
+    "transaction_cost": 0.001,
+    "periods_per_year": 50.4,
+    "bootstrap_iterations": 2000,
+    "random_state": 42
+  },
+  "policy": {
+    "name": "hist_gradient_boosting_5d_long_cash",
+    "positions": [
+      "cash",
+      "long"
+    ],
+    "short_selling": false,
+    "decision_rule": "Long only when P(up) is the largest class probability and is at least the fixed confidence threshold; otherwise cash.",
+    "periods_overlap": false,
+    "entry_exit_turnover_costed": true
+  },
+  "limitation": "This is nested out-of-fold development screening, not the one-time final test and not a claim of live profitability."
+}

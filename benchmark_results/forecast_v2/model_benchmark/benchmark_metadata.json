@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "benchmark_name": "forecast_v2_model_benchmark",
+  "development_splits_used": [
+    "training",
+    "validation"
+  ],
+  "test_split_read": false,
+  "known_v1_test_used_for_selection": false,
+  "config": {
+    "folds": 5,
+    "bootstrap_iterations": 1000,
+    "random_state": 42,
+    "one_session_threshold": 0.0025,
+    "five_session_threshold": 0.005,
+    "minimum_classification_confidence": 0.45,
+    "transaction_cost": 0.001
+  },
+  "regression_models": {
+    "1": [
+      "zero_return",
+      "historical_mean",
+      "random_forest_v1",
+      "ridge_v2"
+    ],
+    "5": [
+      "zero_return",
+      "historical_mean",
+      "ridge_v2"
+    ]
+  },
+  "classification_models": [
+    "always_abstain",
+    "historical_prior",
+    "logistic_v2"
+  ],
+  "model_configurations": {
+    "ridge_v2": {
+      "alpha": 10.0,
+      "horizons": [
+        1,
+        5
+      ]
+    },
+    "logistic_v2": {
+      "inverse_regularization_strength": 0.5,
+      "horizon": 5,
+      "minimum_confidence": 0.45,
+      "class_weight": "balanced",
+      "max_iterations": 1000
+    }
+  },
+  "features_fitted_per_fold_on_training_only": true,
+  "five_session_utility_warning": "Per-decision utility uses overlapping five-session targets and is a screening metric, not a portfolio backtest.",
+  "training_fingerprint": "28c23265767c17c50223d3004fb88c3ccfcf4bf8e175fb17535b96aecbe8a14c",
+  "validation_fingerprint": "7eeebc30dac01a8e48c817aa88b6811e1445fda3c0fbb0535eb12fe5c1261f50",
+  "folds": [
+    {
+      "fold": 1,
+      "training_rows": 23680,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-01-24",
+      "evaluation_date_min": "2022-01-25",
+      "evaluation_date_max": "2022-07-08",
+      "evaluation_rows_horizon_1": 963,
+      "evaluation_rows_horizon_5": 963,
+      "training_target_date_max_horizon_1": "2022-01-24",
+      "training_target_date_max_horizon_5": "2022-01-24"
+    },
+    {
+      "fold": 2,
+      "training_rows": 24643,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-07-08",
+      "evaluation_date_min": "2022-07-09",
+      "evaluation_date_max": "2022-12-20",
+      "evaluation_rows_horizon_1": 970,
+      "evaluation_rows_horizon_5": 970,
+      "training_target_date_max_horizon_1": "2022-07-08",
+      "training_target_date_max_horizon_5": "2022-07-08"
+    },
+    {
+      "fold": 3,
+      "training_rows": 25613,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2022-12-20",
+      "evaluation_date_min": "2022-12-21",
+      "evaluation_date_max": "2023-06-03",
+      "evaluation_rows_horizon_1": 949,
+      "evaluation_rows_horizon_5": 949,
+      "training_target_date_max_horizon_1": "2022-12-20",
+      "training_target_date_max_horizon_5": "2022-12-20"
+    },
+    {
+      "fold": 4,
+      "training_rows": 26562,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2023-06-03",
+      "evaluation_date_min": "2023-06-04",
+      "evaluation_date_max": "2023-11-15",
+      "evaluation_rows_horizon_1": 970,
+      "evaluation_rows_horizon_5": 970,
+      "training_target_date_max_horizon_1": "2023-06-03",
+      "training_target_date_max_horizon_5": "2023-06-03"
+    },
+    {
+      "fold": 5,
+      "training_rows": 27532,
+      "training_date_min": "2010-02-02",
+      "training_date_max": "2023-11-15",
+      "evaluation_date_min": "2023-11-16",
+      "evaluation_date_max": "2024-04-26",
+      "evaluation_rows_horizon_1": 926,
+      "evaluation_rows_horizon_5": 894,
+      "training_target_date_max_horizon_1": "2023-11-15",
+      "training_target_date_max_horizon_5": "2023-11-15"
+    }
+  ]
+}

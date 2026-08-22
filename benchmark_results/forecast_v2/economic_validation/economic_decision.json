@@ -1,0 +1,14 @@
+{
+  "candidate": "logistic_5d_long_cash",
+  "default_threshold": 0.45,
+  "positive_default_excess": false,
+  "majority_group_wins": false,
+  "bootstrap_probability_better": 0.026,
+  "bootstrap_support_at_80_percent": false,
+  "thresholds_with_positive_mean_excess": 0,
+  "thresholds_evaluated": 6,
+  "robust_across_thresholds": false,
+  "decision": "retain_as_predictive_decision_support_only",
+  "final_test_claim": false,
+  "reason": "The five-session classifier has predictive class signal, but its fixed long/cash policy must beat buy-and-hold robustly after costs before it can be treated as an allocation signal."
+}

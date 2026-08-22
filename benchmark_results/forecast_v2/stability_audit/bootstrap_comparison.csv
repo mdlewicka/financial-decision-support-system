@@ -1,0 +1,5 @@
+model,comparison_model,mean_mae_difference,ci_lower_95,ci_upper_95,bootstrap_probability_better_than_zero,cluster_dates
+zero_return,zero_return,0.0,0.0,0.0,0.0,824
+historical_mean,zero_return,7.581574236230286e-05,-1.498022601646913e-05,0.0001536768919381561,0.041,824
+last_observed_return,zero_return,0.0060377759751869585,0.005095640491611579,0.006948491691809522,0.0,824
+random_forest_v1,zero_return,4.782299943629245e-05,-7.166762781229511e-05,0.00015752064106307765,0.238,824
