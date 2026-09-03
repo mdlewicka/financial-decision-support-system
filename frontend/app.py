@@ -5,6 +5,7 @@ from typing import Any, Final, cast
 
 import streamlit as st
 
+from frontend.about_view import render_about_page
 from frontend.accessibility import render_accessibility_styles
 from frontend.ai_insights_view import (
     render_ai_insights_page,
@@ -61,6 +62,7 @@ SELECTED_PAGE_STATE_KEY: Final = "selected_application_page"
 LANGUAGE_STATE_KEY: Final = "presentation_language"
 TIMEZONE_STATE_KEY: Final = "presentation_timezone"
 
+ABOUT_PAGE: Final = "About"
 DASHBOARD_PAGE: Final = "Dashboard"
 FORECASTING_PAGE: Final = "Forecasting"
 RISK_SCENARIOS_PAGE: Final = "Risk and Scenarios"
@@ -72,6 +74,7 @@ GOVERNANCE_PAGE: Final = "Explainability and Governance"
 REPORTS_PAGE: Final = "Reports"
 
 NAVIGATION_OPTIONS: Final[tuple[str, ...]] = (
+    ABOUT_PAGE,
     DASHBOARD_PAGE,
     FORECASTING_PAGE,
     RISK_SCENARIOS_PAGE,
@@ -84,6 +87,7 @@ NAVIGATION_OPTIONS: Final[tuple[str, ...]] = (
 )
 
 NAVIGATION_ICONS: Final[dict[str, str]] = {
+    ABOUT_PAGE: (":material/info:"),
     DASHBOARD_PAGE: (":material/dashboard:"),
     FORECASTING_PAGE: (":material/show_chart:"),
     RISK_SCENARIOS_PAGE: (":material/security:"),
@@ -96,6 +100,7 @@ NAVIGATION_ICONS: Final[dict[str, str]] = {
 }
 
 NAVIGATION_TRANSLATION_KEYS: Final[dict[str, str]] = {
+    ABOUT_PAGE: "navigation.about",
     DASHBOARD_PAGE: "navigation.dashboard",
     FORECASTING_PAGE: "navigation.forecasting",
     RISK_SCENARIOS_PAGE: "navigation.risk",
@@ -162,7 +167,7 @@ def load_api_status(
 def _initialize_selected_page() -> None:
     """Initialize navigation state."""
     if SELECTED_PAGE_STATE_KEY not in st.session_state:
-        st.session_state[SELECTED_PAGE_STATE_KEY] = DASHBOARD_PAGE
+        st.session_state[SELECTED_PAGE_STATE_KEY] = ABOUT_PAGE
 
 
 def _initialize_presentation_preferences() -> None:
@@ -325,6 +330,10 @@ def render_selected_page(
     presentation_timezone: str = DEFAULT_PRESENTATION_TIMEZONE,
 ) -> None:
     """Render the selected application module."""
+    if selected_page == ABOUT_PAGE:
+        render_about_page(language=language)
+        return
+
     if selected_page == DASHBOARD_PAGE:
         render_dashboard_page(client, language=language)
         return

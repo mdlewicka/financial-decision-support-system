@@ -122,7 +122,11 @@ Pełne diagramy komponentów, wdrożenia i przepływu decyzji znajdują się w
 
 ## Aplikacja webowa
 
-Interfejs Streamlit jest zorganizowany w dziewięć głównych modułów analitycznych.
+Interfejs Streamlit rozpoczyna się od strony „Opis aplikacji” i obejmuje dziewięć głównych modułów analitycznych.
+
+### Opis aplikacji
+
+Domyślna strona startowa wyjaśnia cel systemu, zakres wykorzystywanych danych oraz rodzaje wyników dostępnych dla użytkownika. Zawiera także krótki przewodnik po wszystkich modułach i informację, jak rozpocząć pracę z aplikacją. Treść jest dostępna w języku polskim i angielskim.
 
 ### Dashboard
 
@@ -568,7 +572,7 @@ Przed otwarciem testu:
 - finalne artefakty benchmarkowe zostały zabezpieczone fingerprintami SHA256;
 - utworzono frozen manifest;
 - cały projekt przeszedł Ruff;
-- zestaw testów non-RL zakończył się wynikiem 499 passed;
+- w punkcie kontrolnym przed dostępem do testu zestaw testów non-RL zakończył się wynikiem 499 passed;
 - zestaw testów RL i testów integracyjnych RL zakończył się wynikiem 59 passed;
 - testy finalnej ewaluacji zakończyły się powodzeniem;
 - dry-run preflight zwrócił status `READY`.
@@ -917,7 +921,7 @@ python3 -m pytest \
   -q
 ```
 
-Aktualny stan testów regresyjnych przy zamykaniu V2:
+Po dalszym rozszerzeniu zestawu testów aktualny stan regresji przy zamykaniu V2 wynosił:
 
 ```text
 Non-RL: 793 passed

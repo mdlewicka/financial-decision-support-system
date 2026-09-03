@@ -122,7 +122,11 @@ The full component, deployment and decision-flow diagrams are available in
 
 ## Web application
 
-The Streamlit interface is organized into nine main analytical modules.
+The Streamlit interface opens with an Application overview page and includes nine main analytical modules.
+
+### Application overview
+
+The default landing page explains the system's purpose, the scope of its data and the types of results available to users. It also provides a short guide to every module and explains how to begin using the application. The content is available in Polish and English.
 
 ### Dashboard
 
@@ -569,7 +573,7 @@ Before test access:
 - final benchmark artifacts were fingerprinted using SHA256;
 - a frozen manifest was created;
 - the full project passed Ruff;
-- the non-RL regression suite passed with 499 tests;
+- at the pre-test-access checkpoint, the non-RL regression suite passed with 499 tests;
 - the RL and RL integration suite passed with 59 tests;
 - the final-evaluation test suite passed;
 - a dry-run preflight reported `READY`.
@@ -918,7 +922,7 @@ python3 -m pytest \
   -q
 ```
 
-The current V2 closure regression state is:
+After the test suite was expanded further, the V2 closure regression state was:
 
 ```text
 Non-RL: 793 passed

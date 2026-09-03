@@ -43,6 +43,7 @@ _TRANSLATIONS: Final[dict[LanguageCode, dict[str, str]]] = {
         ),
         "navigation.heading": "Moduły",
         "navigation.caption": "Wybierz obszar analizy",
+        "navigation.about": "Opis aplikacji",
         "navigation.dashboard": "Dashboard",
         "navigation.forecasting": "Prognozowanie",
         "navigation.risk": "Ryzyko i scenariusze",
@@ -52,6 +53,57 @@ _TRANSLATIONS: Final[dict[LanguageCode, dict[str, str]]] = {
         "navigation.ai": "Wnioski AI",
         "navigation.governance": "Wyjaśnialność i governance",
         "navigation.reports": "Raporty",
+        "about.title": "Opis aplikacji",
+        "about.caption": "Krótki przewodnik po systemie wspomagania decyzji finansowych.",
+        "about.disclaimer": (
+            "Aplikacja ma charakter analityczny i edukacyjny. Nie stanowi "
+            "indywidualnej rekomendacji inwestycyjnej ani gwarancji przyszłych wyników."
+        ),
+        "about.purpose.title": "Do czego służy?",
+        "about.purpose.body": (
+            "System łączy prognozowanie, analizę ryzyka, porównywanie portfeli, "
+            "wyjaśnialność modeli oraz lokalne mechanizmy AI. Pomaga uporządkować "
+            "informacje i porównać dostępne warianty przy jawnych założeniach."
+        ),
+        "about.data.title": "Na jakich danych się opiera?",
+        "about.data.body": (
+            "Analizy wykorzystują historyczne dzienne dane rynkowe instrumentów "
+            "AGG, BTC-USD, EPOL, GLD, QQQ, SPY, VGK i VT pobrane z Yahoo Finance. "
+            "Bieżący widok informacji rynkowych pokazuje ostatnie dostępne ceny, "
+            "a nie notowania czasu rzeczywistego."
+        ),
+        "about.results.title": "Co otrzymuje użytkownik?",
+        "about.results.body": (
+            "Użytkownik może przeglądać prognozy i ich błędy, miary ryzyka, wagi "
+            "oraz wyniki portfeli, ranking wariantów, wyjaśnienia modelu Random "
+            "Forest, informacje rynkowe, odpowiedzi RAG i gotowe raporty."
+        ),
+        "about.modules.title": "Przewodnik po modułach",
+        "about.modules.caption": "Każda zakładka odpowiada innemu etapowi analizy.",
+        "about.module.dashboard.title": "Dashboard",
+        "about.module.dashboard.body": "Syntetyczny przegląd najważniejszych wyników i statusów systemu.",
+        "about.module.forecasting.title": "Prognozowanie",
+        "about.module.forecasting.body": "Porównanie prognoz modeli naiwnych, ARIMA i Random Forest na danych walidacyjnych.",
+        "about.module.risk.title": "Ryzyko i scenariusze",
+        "about.module.risk.body": "Miary ryzyka oraz wyniki zdefiniowanych scenariuszy portfelowych.",
+        "about.module.optimization.title": "Optymalizacja",
+        "about.module.optimization.body": "Wagi, efektywność, ryzyko i przebieg wartości porównywanych portfeli.",
+        "about.module.decision.title": "Przestrzeń decyzyjna",
+        "about.module.decision.body": "Deterministyczny ranking wariantów według profilu, priorytetów i ograniczeń użytkownika.",
+        "about.module.market.title": "Informacje rynkowe",
+        "about.module.market.body": "Ostatnie dostępne ceny, zmiany dzienne i jawna informacja o świeżości danych.",
+        "about.module.ai.title": "Wnioski AI",
+        "about.module.ai.body": "Wyszukiwanie RAG i agenci porządkujący informacje z zapisanych artefaktów analitycznych.",
+        "about.module.governance.title": "Wyjaśnialność i governance",
+        "about.module.governance.body": "Wyjaśnienia SHAP, PDP i ALE oraz informacje o pochodzeniu i ograniczeniach wyników.",
+        "about.module.reports.title": "Raporty",
+        "about.module.reports.body": "Generowanie podsumowań wyników wraz z zakresem, źródłami i ograniczeniami analizy.",
+        "about.start.title": "Jak rozpocząć?",
+        "about.start.body": (
+            "Rozpocznij od **Dashboardu**, aby zobaczyć przekrojowe podsumowanie. "
+            "Następnie wybierz moduł odpowiadający interesującej Cię analizie. "
+            "Do świadomego porównania wariantów przejdź do **Przestrzeni decyzyjnej**."
+        ),
         "system.heading": "Status systemu",
         "system.api_available": "API dostępne",
         "system.api_unavailable": "API niedostępne",
@@ -924,6 +976,7 @@ _TRANSLATIONS: Final[dict[LanguageCode, dict[str, str]]] = {
         ),
         "navigation.heading": "Modules",
         "navigation.caption": "Select an analysis area",
+        "navigation.about": "Application overview",
         "navigation.dashboard": "Dashboard",
         "navigation.forecasting": "Forecasting",
         "navigation.risk": "Risk and scenarios",
@@ -933,6 +986,56 @@ _TRANSLATIONS: Final[dict[LanguageCode, dict[str, str]]] = {
         "navigation.ai": "AI Insights",
         "navigation.governance": "Explainability and governance",
         "navigation.reports": "Reports",
+        "about.title": "Application overview",
+        "about.caption": "A short guide to the Financial Decision Support System.",
+        "about.disclaimer": (
+            "The application is intended for analytical and educational use. It does "
+            "not provide individualized investment advice or guarantee future results."
+        ),
+        "about.purpose.title": "What is it for?",
+        "about.purpose.body": (
+            "The system combines forecasting, risk analysis, portfolio comparison, "
+            "model explainability and local AI mechanisms. It helps organize evidence "
+            "and compare available alternatives under explicit assumptions."
+        ),
+        "about.data.title": "What data does it use?",
+        "about.data.body": (
+            "The analyses use historical daily market data for AGG, BTC-USD, EPOL, "
+            "GLD, QQQ, SPY, VGK and VT obtained from Yahoo Finance. The market "
+            "intelligence view shows the latest available prices, not real-time quotes."
+        ),
+        "about.results.title": "What can the user obtain?",
+        "about.results.body": (
+            "Users can inspect forecasts and errors, risk measures, portfolio weights "
+            "and performance, ranked alternatives, Random Forest explanations, market "
+            "information, RAG answers and downloadable reports."
+        ),
+        "about.modules.title": "Module guide",
+        "about.modules.caption": "Each page supports a different stage of the analysis.",
+        "about.module.dashboard.title": "Dashboard",
+        "about.module.dashboard.body": "A concise overview of the system's main results and statuses.",
+        "about.module.forecasting.title": "Forecasting",
+        "about.module.forecasting.body": "Comparison of naive, ARIMA and Random Forest forecasts on validation data.",
+        "about.module.risk.title": "Risk and scenarios",
+        "about.module.risk.body": "Risk measures and results for predefined portfolio scenarios.",
+        "about.module.optimization.title": "Optimization",
+        "about.module.optimization.body": "Weights, performance, risk and value paths of the compared portfolios.",
+        "about.module.decision.title": "Decision Workspace",
+        "about.module.decision.body": "A deterministic ranking based on the user's profile, priorities and constraints.",
+        "about.module.market.title": "Market Intelligence",
+        "about.module.market.body": "Latest available prices, daily changes and explicit data-freshness information.",
+        "about.module.ai.title": "AI Insights",
+        "about.module.ai.body": "RAG retrieval and agents that organize information from stored analytical artifacts.",
+        "about.module.governance.title": "Explainability and governance",
+        "about.module.governance.body": "SHAP, PDP and ALE explanations plus result provenance and limitations.",
+        "about.module.reports.title": "Reports",
+        "about.module.reports.body": "Result summaries with the scope, sources and limitations of the analysis.",
+        "about.start.title": "How to begin",
+        "about.start.body": (
+            "Start with the **Dashboard** for a cross-system summary. Then choose the "
+            "module that matches your analytical question. Use the **Decision "
+            "Workspace** to compare alternatives under explicit assumptions."
+        ),
         "system.heading": "System status",
         "system.api_available": "API available",
         "system.api_unavailable": "API unavailable",

@@ -1104,6 +1104,7 @@ def _calls_since(
 
 def test_navigation_contract_is_explicit() -> None:
     assert app.NAVIGATION_OPTIONS == (
+        app.ABOUT_PAGE,
         app.DASHBOARD_PAGE,
         app.FORECASTING_PAGE,
         app.RISK_SCENARIOS_PAGE,
@@ -1183,7 +1184,7 @@ def test_load_api_status_handles_api_failure() -> None:
     assert error_message == "Backend unavailable"
 
 
-def test_dashboard_renders_with_healthy_api(
+def test_application_overview_is_the_default_page(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     install_healthy_api(monkeypatch)
@@ -1192,7 +1193,11 @@ def test_dashboard_renders_with_healthy_api(
 
     assert not application.exception
 
-    assert application.main.title[0].value == "Dashboard"
+    assert application.main.title[0].value == "Opis aplikacji"
+    assert any(
+        item.value == "Przewodnik po modułach"
+        for item in application.main.header
+    )
 
     assert any(item.value == "API dostępne" for item in (application.sidebar.success))
 
@@ -1202,6 +1207,8 @@ def test_dashboard_action_opens_decision_workspace(
 ) -> None:
     install_healthy_api(monkeypatch)
     application = AppTest.from_file(str(APP_PATH)).run()
+
+    _navigate(application, app.DASHBOARD_PAGE)
 
     _find_by_key(
         application.main.button,
@@ -1288,6 +1295,14 @@ def test_global_language_and_timezone_preferences_are_persistent(
     ),
     [
         (
+            app.ABOUT_PAGE,
+            "Opis aplikacji",
+        ),
+        (
+            app.DASHBOARD_PAGE,
+            "Dashboard",
+        ),
+        (
             app.FORECASTING_PAGE,
             "Prognozowanie",
         ),
@@ -1350,6 +1365,11 @@ def test_language_change_localizes_core_analytical_views(
         app.LANGUAGE_STATE_KEY,
     )
     language.set_value("en").run()
+
+    assert application.main.title[0].value == "Application overview"
+    assert any(item.value == "Module guide" for item in application.main.header)
+
+    _navigate(application, app.DASHBOARD_PAGE)
 
     assert application.main.title[0].value == "Dashboard"
     assert any(item.value == "Decision summary" for item in application.main.subheader)
