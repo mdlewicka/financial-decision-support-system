@@ -14,6 +14,7 @@ from backend.src.agents.models import AgentResponse
 from backend.src.api.agent_repository import (
     AgentResultRepository,
 )
+from backend.src.observability.ollama_status import OllamaStatusService
 from backend.src.rag.config import RAGConfig
 from backend.src.rag.factory import build_rag_pipeline
 from backend.src.rag.generation import OllamaGenerator
@@ -138,6 +139,12 @@ class AgentRuntimeService:
                 ) from error
 
             try:
+                ollama_status = OllamaStatusService(
+                    model_name=result_metadata.model_name,
+                ).evaluate()
+                if ollama_status.status != "available":
+                    raise ConnectionError("Ollama is unavailable.")
+
                 model = OllamaGenerator(result_metadata.model_name)
 
                 rag_pipeline = build_rag_pipeline(

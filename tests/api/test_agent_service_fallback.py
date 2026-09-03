@@ -42,15 +42,25 @@ def test_runtime_uses_deterministic_fallback_when_ollama_is_unavailable(
     sentinel_suite = object()
     build_calls: list[dict[str, Any]] = []
 
-    def unavailable_ollama(model_name: str) -> None:
-        assert model_name == "gemma3:4b"
-        raise ConnectionError("Ollama is unavailable.")
+    class UnavailableOllamaStatus:
+        status = "unavailable"
+
+    class UnavailableOllamaStatusService:
+        def __init__(self, *, model_name: str) -> None:
+            assert model_name == "gemma3:4b"
+
+        def evaluate(self) -> UnavailableOllamaStatus:
+            return UnavailableOllamaStatus()
 
     def recording_builder(**kwargs: Any) -> object:
         build_calls.append(kwargs)
         return sentinel_suite
 
-    monkeypatch.setattr(service_module, "OllamaGenerator", unavailable_ollama)
+    monkeypatch.setattr(
+        service_module,
+        "OllamaStatusService",
+        UnavailableOllamaStatusService,
+    )
     monkeypatch.setattr(service_module, "build_agent_suite", recording_builder)
     service = AgentRuntimeService(MetadataRepository(tmp_path))  # type: ignore[arg-type]
 
